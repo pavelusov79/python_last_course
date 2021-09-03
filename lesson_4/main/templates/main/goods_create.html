@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <h5 class="font-italic text-center mb-5">Добавление товара</h5>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-7">
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% include 'main/include/form.html' %}
+                <input type="submit" class="btn btn-primary px-3 mt-3 mb-5" value="добавить товар">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

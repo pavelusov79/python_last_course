@@ -17,6 +17,7 @@
                        <th>название поставщика</th>
                    </tr>
                 </thead>
+                <tbody>
                 {% for item in object_list %}
                 <tr>
                     <td>{{ item.published_date|date:'d.m.Y' }}</td>
@@ -26,6 +27,7 @@
                     <td>{{ item.supplier }}</td>
                 </tr>
                 {% endfor %}
+                </tbody>
             </table>
             {% else %}
                 <p class="my-5">У вас еще нет ни одного товрара.</p>
@@ -34,7 +36,14 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <a class="btn btn-outline-primary px-3 ml-5 my-5" role="button" href="{% url 'main:add_goods' %}">добавить товар</a>
+            <a class="btn btn-outline-primary px-3 ml-5 my-5 js-create-good" role="button" href="{% url 'main:add_goods' %}">добавить товар</a>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-good">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            </div>
         </div>
     </div>
 </div>
